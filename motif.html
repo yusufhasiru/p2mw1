@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motif Karawo - Karawo Gorontalo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 390px;
+      margin: 0 auto;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 40px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 12px;
+    }
+
+    .back-btn {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #F7F3ED;
+    }
+
+    .back-btn svg {
+      width: 24px;
+      height: 24px;
+      stroke: #333333;
+    }
+
+    .page-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333333;
+      flex: 1;
+    }
+
+    /* Hero Image */
+    .hero-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Content */
+    .content {
+      padding: 24px 16px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .title-underline {
+      width: 80px;
+      height: 4px;
+      background-color: #C9A227;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+
+    .intro-text {
+      background-color: white;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      color: #333333;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* Motif Cards */
+    .motif-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .motif-item {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .motif-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .motif-content {
+      padding: 16px;
+    }
+
+    .motif-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #8B5E3C;
+      margin-bottom: 4px;
+    }
+
+    .motif-divider {
+      width: 40px;
+      height: 3px;
+      background-color: #C9A227;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    .motif-meaning {
+      color: #333333;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .btn-back-home {
+      width: 100%;
+      background-color: #8B5E3C;
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 24px;
+    }
+
+    .btn-back-home:hover {
+      background-color: #704B2F;
+    }
+
+    .pattern-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 32px 0;
+    }
+
+    .divider-line {
+      width: 48px;
+      height: 1px;
+      background-color: #C9A227;
+    }
+
+    .divider-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .divider-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #C9A227;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="page-title">Motif Karawo</h1>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1763368161039-12a2879b55e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGVtYnJvaWRlcnklMjBmYWJyaWMlMjB0ZXh0dXJlfGVufDF8fHx8MTc3MzYzODAzM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Karawo Traditional Embroidery">
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h2 class="section-title">Filosofi Motif Karawo</h2>
+      <div class="title-underline"></div>
+
+      <div class="intro-text">
+        Setiap motif Karawo memiliki filosofi dan makna yang mendalam, mencerminkan nilai-nilai budaya dan kearifan lokal masyarakat Gorontalo.
+      </div>
+
+      <!-- Motif List -->
+      <div class="motif-list">
+        <!-- Motif Pohon Pinang -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1536679975489-9067c6c17f26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYWxtJTIwdHJlZSUyMHBhdHRlcm58ZW58MXx8fHwxNzczNjQxMTI4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Pohon Pinang">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Pohon Pinang</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Melambangkan kejujuran, keteguhan, dan sifat pengayom.</p>
+          </div>
+        </div>
+
+        <!-- Motif Mahkota -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1768885561125-785fa1d6f18b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb2xkZW4lMjBjcm93biUyMGVtYnJvaWRlcnl8ZW58MXx8fHwxNzczNjQxMTI4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Mahkota">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Mahkota (Makuta)</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Bermakna berguna bagi orang lain dan memiliki kedudukan yang dihormati.</p>
+          </div>
+        </div>
+
+        <!-- Motif Buaya -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1698657169427-a24d79024f14?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcm9jb2RpbGUlMjBwYXR0ZXJuJTIwdGV4dGlsZXxlbnwxfHx8fDE3NzM2NDExMjl8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Buaya">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Buaya</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Melambangkan hukum, nasehat, dan kebijaksanaan dalam memimpin.</p>
+          </div>
+        </div>
+
+        <!-- Motif Tali/Simpul -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1551035418-05f310034c55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb3BlJTIwa25vdCUyMHBhdHRlcm58ZW58MXx8fHwxNzczNjQxMTI5fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Tali">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Tali / Simpul</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Simbol persaudaraan dan ikatan kekeluargaan.</p>
+          </div>
+        </div>
+
+        <!-- Motif Kelapa -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1708755574512-fd4e8ab860f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2NvbnV0JTIwdHJlZSUyMHBhdHRlcm58ZW58MXx8fHwxNzczNjQxMTMwfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Kelapa">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Kelapa</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Melambangkan kemuliaan, keteguhan, kejujuran, dan sifat berbagi.</p>
+          </div>
+        </div>
+
+        <!-- Pattern Divider -->
+        <div class="pattern-divider">
+          <div class="divider-line"></div>
+          <div class="divider-dots">
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+          </div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Motif Gula Aren -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1733087533001-a281ec9d4fae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdWdhciUyMHBhbG0lMjB0cmVlfGVufDF8fHx8MTc3MzY0MTEzMHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Gula Aren">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Gula Aren (Pahangga)</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Menggambarkan status atau kedudukan manusia dalam masyarakat.</p>
+          </div>
+        </div>
+
+        <!-- Motif Gapura -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1769733221934-77ad0c5d1bc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYXRlJTIwYXJjaHdheSUyMHRyYWRpdGlvbmFsfGVufDF8fHx8MTc3MzY0MTEzMHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Gapura">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Gapura (Alikusu)</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Bermakna religiusitas dan semangat hidup yang berlandaskan agama.</p>
+          </div>
+        </div>
+
+        <!-- Motif Janur -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1601245024700-d0f4fbda2ecd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYWxtJTIwbGVhZiUyMHBhdHRlcm58ZW58MXx8fHwxNzczNjQxMTMxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Janur">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Janur (Lale)</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Simbol pemimpin yang mencintai rakyatnya.</p>
+          </div>
+        </div>
+
+        <!-- Motif Pisang -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1608573989115-0718cab1d759?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5hbmElMjBsZWFmJTIwcGF0dGVybnxlbnwxfHx8fDE3NzM2NDExMzF8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Pisang">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Pisang</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Melambangkan semangat hidup dan memberi manfaat bagi orang lain.</p>
+          </div>
+        </div>
+
+        <!-- Motif Tebu -->
+        <div class="motif-item">
+          <img src="https://images.unsplash.com/photo-1672359055393-8342b883802a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdWdhcmNhbmUlMjBwbGFudCUyMHBhdHRlcm58ZW58MXx8fHwxNzczNjQxMTMxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Tebu">
+          <div class="motif-content">
+            <h3 class="motif-name">Motif Tebu</h3>
+            <div class="motif-divider"></div>
+            <p class="motif-meaning">Melambangkan kehangatan, ekspresif, dan karakter kuat.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-back-home" onclick="goBack()">Kembali ke Halaman Utama</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

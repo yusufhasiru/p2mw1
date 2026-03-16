@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karawo Gorontalo - Traditional Embroidery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 390px;
+      margin: 0 auto;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 80px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      display: block;
+    }
+
+    .site-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333333;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), transparent);
+    }
+
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 24px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .hero-description {
+      font-size: 14px;
+      opacity: 0.9;
+      max-width: 320px;
+      margin-bottom: 24px;
+    }
+
+    .btn-primary {
+      background-color: #C9A227;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 50px;
+      border: none;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: #B89220;
+    }
+
+    /* Content Sections */
+    .content {
+      padding: 16px;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .title-underline {
+      width: 64px;
+      height: 4px;
+      background-color: #C9A227;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    /* Cards */
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 192px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 16px;
+    }
+
+    .card-text {
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .btn-secondary {
+      width: 100%;
+      background-color: #8B5E3C;
+      color: white;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background-color: #704B2F;
+    }
+
+    /* Pattern Divider */
+    .pattern-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 24px 0;
+    }
+
+    .divider-line {
+      width: 48px;
+      height: 1px;
+      background-color: #C9A227;
+    }
+
+    .divider-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .divider-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #C9A227;
+    }
+
+    /* Process Grid */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .process-card {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .process-card img {
+      width: 100%;
+      height: 128px;
+      object-fit: cover;
+    }
+
+    .process-card-body {
+      padding: 12px;
+    }
+
+    .process-number {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: #C9A227;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .process-title {
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .process-underline {
+      width: 32px;
+      height: 2px;
+      background-color: #C9A227;
+      margin-bottom: 8px;
+    }
+
+    .process-description {
+      font-size: 12px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    /* Motif Grid */
+    .motif-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .motif-card {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .motif-card img {
+      width: 100%;
+      height: 128px;
+      object-fit: cover;
+    }
+
+    .motif-card-body {
+      padding: 12px;
+    }
+
+    .motif-title {
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 4px;
+    }
+
+    .motif-underline {
+      width: 32px;
+      height: 2px;
+      background-color: #C9A227;
+      margin-bottom: 8px;
+    }
+
+    .motif-description {
+      font-size: 12px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    /* Artisan Section */
+    .artisan-card img {
+      height: 224px;
+    }
+
+    .artisan-name {
+      font-weight: 600;
+      color: #8B5E3C;
+      margin-bottom: 8px;
+    }
+
+    .quote-box {
+      background-color: #F7F3ED;
+      border-left: 4px solid #C9A227;
+      padding: 12px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 12px;
+    }
+
+    .quote-text {
+      color: #333333;
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    .artisan-bio {
+      color: #666666;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    /* Info Cards */
+    .info-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .info-card {
+      background-color: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 12px;
+    }
+
+    .info-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background-color: #F7F3ED;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #C9A227;
+    }
+
+    .info-content h4 {
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 4px;
+    }
+
+    .info-content p {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+      border-top: 1px solid #e5e5e5;
+      z-index: 100;
+    }
+
+    .bottom-nav-container {
+      max-width: 390px;
+      margin: 0 auto;
+    }
+
+    .nav-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 8px 0;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #888888;
+      transition: color 0.3s;
+      flex: 1;
+      max-width: 65px;
+    }
+
+    .nav-item.active {
+      color: #8B5E3C;
+    }
+
+    .nav-item svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .nav-item span {
+      font-size: 10px;
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="harta/logop2mw.png" alt="" height="32" width="28">
+      </div>
+      <h1 class="site-title">Karawo Gorontalo</h1>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <img src="https://images.unsplash.com/photo-1763368161039-12a2879b55e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGVtYnJvaWRlcnklMjBmYWJyaWMlMjB0ZXh0dXJlfGVufDF8fHx8MTc3MzYzODAzM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Karawo embroidery fabric">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h2>Karawo</h2>
+        <p class="hero-subtitle">Traditional Embroidery from Gorontalo</p>
+        <p class="hero-description">A cultural heritage crafted carefully by skilled artisans.</p>
+        <button class="btn-primary" onclick="scrollToSection('sejarah')">Baca Sejarah</button>
+      </div>
+    </section>
+
+    <!-- Content Sections -->
+    <div class="content">
+      <!-- Section 1: Sejarah Karawo -->
+      <section id="sejarah">
+        <h3 class="section-title">Sejarah Karawo</h3>
+        <div class="title-underline"></div>
+        
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1763368161039-12a2879b55e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGVtYnJvaWRlcnklMjBmYWJyaWMlMjB0ZXh0dXJlfGVufDF8fHx8MTc3MzYzODAzM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Traditional Karawo cloth">
+          <div class="card-body">
+            <p class="card-text">
+              Karawo adalah seni sulam tradisional khas Gorontalo yang telah ada sejak abad ke-16. 
+              Teknik ini menciptakan pola berlubang yang indah dan unik, menjadikan setiap karya sebagai masterpiece budaya.
+            </p>
+            <a href="sejarah.html" class="btn-secondary" style="display: block; text-align: center; text-decoration: none;">Baca Selengkapnya</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pattern Divider -->
+      <div class="pattern-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dots">
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- Section 2: Proses Pembuatan -->
+      <section id="proses">
+        <h3 class="section-title">Proses Pembuatan</h3>
+        <div class="title-underline"></div>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <img src="https://images.unsplash.com/photo-1771587756631-6cffb69fc434?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkcmF3aW5nJTIwcGF0dGVybiUyMGZhYnJpYyUyMHBlbmNpbHxlbnwxfHx8fDE3NzM2NDg0ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Menggambar Pola">
+            <div class="process-card-body">
+              <span class="process-number">1</span>
+              <h4 class="process-title">Menggambar Pola</h4>
+              <div class="process-underline"></div>
+              <p class="process-description">Menggambar motif pada kain menggunakan pensil atau spidol khusus</p>
+            </div>
+          </div>
+
+          <div class="process-card">
+            <img src="https://images.unsplash.com/photo-1678775700423-f535a00306e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXR0aW5nJTIwZmFicmljJTIwZmliZXJzJTIwc2Npc3NvcnN8ZW58MXx8fHwxNzczNjQ4NDg2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mengiris Kain">
+            <div class="process-card-body">
+              <span class="process-number">2</span>
+              <h4 class="process-title">Mengiris Kain</h4>
+              <div class="process-underline"></div>
+              <p class="process-description">Mengiris atau memotong serat kain mengikuti pola yang telah dibuat</p>
+            </div>
+          </div>
+
+          <div class="process-card">
+            <img src="https://images.unsplash.com/photo-1746737198844-b9c9f4189352?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwdWxsaW5nJTIwdGhyZWFkcyUyMGVtYnJvaWRlcnl8ZW58MXx8fHwxNzczNjQ4NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mencabut Benang">
+            <div class="process-card-body">
+              <span class="process-number">3</span>
+              <h4 class="process-title">Mencabut Benang</h4>
+              <div class="process-underline"></div>
+              <p class="process-description">Serat kain yang sudah diiris dicabut satu per satu membentuk ruang kosong</p>
+            </div>
+          </div>
+
+          <div class="process-card">
+            <img src="https://images.unsplash.com/photo-1681061660434-b3110df2b6b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbWJyb2lkZXJ5JTIwc3RpdGNoaW5nJTIwY29sb3JmdWwlMjB0aHJlYWR8ZW58MXx8fHwxNzczNjQ4NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Menyulam">
+            <div class="process-card-body">
+              <span class="process-number">4</span>
+              <h4 class="process-title">Menyulam</h4>
+              <div class="process-underline"></div>
+              <p class="process-description">Menyulam dengan benang berwarna membentuk motif karawo yang indah</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pattern Divider -->
+      <div class="pattern-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dots">
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- Section 3: Filosofi Motif -->
+      <section id="motif">
+        <h3 class="section-title">Filosofi Motif</h3>
+        <div class="title-underline"></div>
+
+        <div class="motif-grid">
+          <div class="motif-card">
+            <img src="https://images.unsplash.com/photo-1695668148100-987abc5841ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmbG9yYWwlMjBlbWJyb2lkZXJ5JTIwZGVzaWdufGVufDF8fHx8MTc3MzYzODAzNHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Bunga">
+            <div class="motif-card-body">
+              <h4 class="motif-title">Motif Bunga</h4>
+              <div class="motif-underline"></div>
+              <p class="motif-description">Menggambarkan keindahan flora Gorontalo dengan detail halus</p>
+            </div>
+          </div>
+
+          <div class="motif-card">
+            <img src="https://images.unsplash.com/photo-1762111908760-ce1cd8c135e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXR1cmUlMjBwYXR0ZXJuJTIwZmFicmljfGVufDF8fHx8MTc3MzYzODAzNXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Alam">
+            <div class="motif-card-body">
+              <h4 class="motif-title">Motif Alam</h4>
+              <div class="motif-underline"></div>
+              <p class="motif-description">Terinspirasi dari keindahan alam sekitar</p>
+            </div>
+          </div>
+
+          <div class="motif-card">
+            <img src="https://images.unsplash.com/photo-1773499129488-bb7e21257452?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnZW9tZXRyaWMlMjBwYXR0ZXJuJTIwZW1icm9pZGVyeXxlbnwxfHx8fDE3NzM2MzgwMzR8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Geometris">
+            <div class="motif-card-body">
+              <h4 class="motif-title">Motif Geometris</h4>
+              <div class="motif-underline"></div>
+              <p class="motif-description">Pola geometris yang simetris dan harmonis</p>
+            </div>
+          </div>
+
+          <div class="motif-card">
+            <img src="https://images.unsplash.com/photo-1761515315730-078ad40a3430?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWFmJTIwcGF0dGVybiUyMHRleHRpbGV8ZW58MXx8fHwxNzczNjM4MDM1fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Daun">
+            <div class="motif-card-body">
+              <h4 class="motif-title">Motif Daun</h4>
+              <div class="motif-underline"></div>
+              <p class="motif-description">Dedaunan tropis yang melambangkan kehidupan</p>
+            </div>
+          </div>
+        </div>
+        
+        <a href="motif.html" class="btn-secondary" style="display: block; text-align: center; text-decoration: none; margin-top: 24px;">Motif Lainnya</a>
+      </section>
+
+      <!-- Pattern Divider -->
+      <div class="pattern-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dots">
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- Section 4: Cerita Pengrajin -->
+      <section id="pengrajin">
+        <h3 class="section-title">Cerita Pengrajin</h3>
+        <div class="title-underline"></div>
+
+        <div class="card artisan-card">
+          <img src="https://images.unsplash.com/photo-1763733593880-2eb9b22f0b22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGFydGlzYW4lMjB3b21hbiUyMHNld2luZ3xlbnwxfHx8fDE3NzM2MzgwMzR8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Karawo artisan">
+          <div class="card-body">
+            <h4 class="artisan-name">Ibu Siti Nurhaliza</h4>
+            <div class="quote-box">
+              <p class="quote-text">"Setiap jahitan karawo dibuat dengan kesabaran dan cinta."</p>
+            </div>
+            <p class="artisan-bio">
+              Ibu Siti telah menggeluti seni karawo selama lebih dari 30 tahun. 
+              Beliau mewarisi keterampilan ini dari ibunya dan terus melestarikan tradisi untuk generasi mendatang.
+            </p>
+            <a href="cerita.html" class="btn-secondary" style="display: block; text-align: center; text-decoration: none;">Baca Cerita</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pattern Divider -->
+      <div class="pattern-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dots">
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- Section 5: Informasi Umum -->
+      <section id="info">
+        <h3 class="section-title">Informasi Umum</h3>
+        <div class="title-underline"></div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </div>
+            <div class="info-content">
+              <h4>Proses Pembuatan</h4>
+              <p>Karawo dibuat dengan teknik sulam tangan yang membutuhkan ketelitian tinggi</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <div class="info-content">
+              <h4>Asal Daerah</h4>
+              <p>Warisan budaya dari Gorontalo yang telah diwariskan turun-temurun</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </div>
+            <div class="info-content">
+              <h4>Keunikan Karawo</h4>
+              <p>Teknik sulam tangan khas yang menghasilkan pola berlubang artistik</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <div class="bottom-nav-container">
+        <div class="nav-items">
+          <button class="nav-item active" data-tab="home" onclick="handleNavClick('home')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Home</span>
+          </button>
+          <button class="nav-item" data-tab="sejarah" onclick="handleNavClick('sejarah')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span>Sejarah</span>
+          </button>
+          <button class="nav-item" data-tab="proses" onclick="handleNavClick('proses')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 1v6m0 6v6m5.657-13.657l-4.243 4.243m-4.243 0l-4.243-4.243m0 11.314l4.243-4.243m4.243 0l4.243 4.243"></path>
+            </svg>
+            <span>Proses</span>
+          </button>
+          <button class="nav-item" data-tab="motif" onclick="handleNavClick('motif')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Motif</span>
+          </button>
+          <button class="nav-item" data-tab="pengrajin" onclick="handleNavClick('pengrajin')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Pengrajin</span>
+          </button>
+          <button class="nav-item" data-tab="info" onclick="handleNavClick('info')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>Info</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    // Scroll to section
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const yOffset = -70;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+
+    // Handle navigation click
+    function handleNavClick(tab) {
+      // Remove active class from all nav items
+      const navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(item => item.classList.remove('active'));
+      
+      // Add active class to clicked nav item
+      const clickedItem = document.querySelector(`[data-tab="${tab}"]`);
+      if (clickedItem) {
+        clickedItem.classList.add('active');
+      }
+
+      // Scroll to section
+      if (tab === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        scrollToSection(tab);
+      }
+    }
+
+    // Update active nav on scroll
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function() {
+        const sections = ['hero', 'sejarah', 'proses', 'motif', 'pengrajin', 'info'];
+        const scrollPos = window.pageYOffset + 100;
+
+        sections.forEach(sectionId => {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+              const navItems = document.querySelectorAll('.nav-item');
+              navItems.forEach(item => item.classList.remove('active'));
+              
+              const tab = sectionId === 'hero' ? 'home' : sectionId;
+              const activeItem = document.querySelector(`[data-tab="${tab}"]`);
+              if (activeItem) {
+                activeItem.classList.add('active');
+              }
+            }
+          }
+        });
+      }, 100);
+    });
+  </script>
+</body>
+</html>

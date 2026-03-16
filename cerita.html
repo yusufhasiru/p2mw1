@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerita Pengrajin - Karawo Gorontalo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 390px;
+      margin: 0 auto;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 40px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 12px;
+    }
+
+    .back-btn {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #F7F3ED;
+    }
+
+    .back-btn svg {
+      width: 24px;
+      height: 24px;
+      stroke: #333333;
+    }
+
+    .page-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333333;
+      flex: 1;
+    }
+
+    /* Hero Image */
+    .hero-image {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Content */
+    .content {
+      padding: 24px 16px;
+    }
+
+    .artisan-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .artisan-name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #8B5E3C;
+      margin-bottom: 8px;
+    }
+
+    .artisan-subtitle {
+      font-size: 16px;
+      color: #666666;
+      font-style: italic;
+    }
+
+    .title-underline {
+      width: 80px;
+      height: 4px;
+      background-color: #C9A227;
+      border-radius: 2px;
+      margin: 12px auto 0;
+    }
+
+    /* Quote Box */
+    .quote-section {
+      background: linear-gradient(135deg, #8B5E3C 0%, #C9A227 100%);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .quote-icon {
+      font-size: 48px;
+      color: rgba(255, 255, 255, 0.3);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .quote-text {
+      color: white;
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* Story Section */
+    .story-section {
+      background-color: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .story-section h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #8B5E3C;
+      margin-bottom: 4px;
+    }
+
+    .section-divider {
+      width: 40px;
+      height: 3px;
+      background-color: #C9A227;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    .story-section p {
+      color: #333333;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    .story-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Image Gallery */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 150px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      background-color: #FFF9E6;
+      border-left: 4px solid #C9A227;
+      padding: 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      color: #8B5E3C;
+      font-style: italic;
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+
+    /* Achievement List */
+    .achievement-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .achievement-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .achievement-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background-color: #FFF9E6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    .achievement-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: #C9A227;
+    }
+
+    .achievement-text {
+      flex: 1;
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    /* Pattern Divider */
+    .pattern-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 32px 0;
+    }
+
+    .divider-line {
+      width: 48px;
+      height: 1px;
+      background-color: #C9A227;
+    }
+
+    .divider-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .divider-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #C9A227;
+    }
+
+    /* Button */
+    .btn-back-home {
+      width: 100%;
+      background-color: #8B5E3C;
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 24px;
+    }
+
+    .btn-back-home:hover {
+      background-color: #704B2F;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="page-title">Cerita Pengrajin</h1>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1757076952608-4baa9cdf89fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGFydGlzYW4lMjB3b21hbiUyMGVtYnJvaWRlcnl8ZW58MXx8fHwxNzczNjQxNDYyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Ibu Siti Nurhaliza">
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Header -->
+      <div class="artisan-header">
+        <h2 class="artisan-name">Ibu Siti Nurhaliza</h2>
+        <p class="artisan-subtitle">Pengrajin Karawo Generasi Ketiga</p>
+        <div class="title-underline"></div>
+      </div>
+
+      <!-- Quote -->
+      <div class="quote-section">
+        <div class="quote-icon">"</div>
+        <p class="quote-text">Setiap jahitan karawo dibuat dengan kesabaran dan cinta. Ini bukan hanya kain, tetapi warisan budaya yang harus kita jaga.</p>
+      </div>
+
+      <!-- Perjalanan Hidup -->
+      <div class="story-section">
+        <h3>Perjalanan Hidup</h3>
+        <div class="section-divider"></div>
+        <p>
+          Ibu Siti Nurhaliza lahir di sebuah desa kecil di Gorontalo pada tahun 1965. Sejak usia 8 tahun, beliau sudah mulai belajar teknik dasar karawo dari ibunya, yang juga merupakan pengrajin karawo terkenal di desanya.
+        </p>
+        <p>
+          Ketika masih kecil, setiap sore setelah pulang sekolah, Ibu Siti selalu duduk di samping ibunya, memperhatikan dengan seksama setiap gerakan jarum dan benang. Dari situlah cinta beliau terhadap seni karawo mulai tumbuh.
+        </p>
+      </div>
+
+      <!-- Image Gallery -->
+      <div class="image-gallery">
+        <div class="gallery-image">
+          <img src="https://images.unsplash.com/photo-1766414435654-c0fd3ecdad35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbWJyb2lkZXJ5JTIwd29ya3Nob3AlMjB0cmFkaXRpb25hbHxlbnwxfHx8fDE3NzM2NDE0NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Workshop">
+        </div>
+        <div class="gallery-image">
+          <img src="https://images.unsplash.com/photo-1771585655024-4638f3862dea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kbWFkZSUyMGVtYnJvaWRlcnklMjBkZXRhaWx8ZW58MXx8fHwxNzczNjQxNDYzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Detail Karawo">
+        </div>
+      </div>
+
+      <!-- Warisan Keluarga -->
+      <div class="story-section">
+        <h3>Warisan Keluarga</h3>
+        <div class="section-divider"></div>
+        <p>
+          Seni karawo telah menjadi bagian dari keluarga Ibu Siti selama tiga generasi. Nenek beliau adalah salah satu pengrajin karawo pertama di desanya yang mengajarkan teknik ini kepada para wanita muda di kampung.
+        </p>
+        <p>
+          "Ibu saya selalu berkata, karawo bukan sekadar keterampilan, tetapi identitas kita sebagai orang Gorontalo," kenang Ibu Siti dengan mata berkaca-kaca.
+        </p>
+        
+        <div class="highlight-box">
+          <p>Setiap motif yang saya buat memiliki cerita dan doa tersendiri untuk orang yang akan memakainya.</p>
+        </div>
+      </div>
+
+      <!-- Pattern Divider -->
+      <div class="pattern-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dots">
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- Dedikasi dan Pencapaian -->
+      <div class="story-section">
+        <h3>Dedikasi dan Pencapaian</h3>
+        <div class="section-divider"></div>
+        <p>
+          Selama lebih dari 30 tahun berkarya, Ibu Siti telah menciptakan ratusan karya karawo yang tersebar di berbagai penjuru nusantara bahkan mancanegara. Beliau tidak hanya memproduksi, tetapi juga aktif mengajarkan teknik karawo kepada generasi muda.
+        </p>
+
+        <ul class="achievement-list">
+          <li class="achievement-item">
+            <div class="achievement-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="achievement-text">
+              Mengajar lebih dari 200 murid teknik karawo sejak tahun 1995
+            </div>
+          </li>
+          <li class="achievement-item">
+            <div class="achievement-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="achievement-text">
+              Karya-karyanya dipamerkan di Museum Tekstil Jakarta tahun 2010
+            </div>
+          </li>
+          <li class="achievement-item">
+            <div class="achievement-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="achievement-text">
+              Mendapat penghargaan "Pengrajin Teladan" dari Pemerintah Provinsi Gorontalo tahun 2015
+            </div>
+          </li>
+          <li class="achievement-item">
+            <div class="achievement-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="achievement-text">
+              Mendirikan sanggar karawo "Rumah Budaya Siti" untuk melestarikan tradisi
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pesan untuk Generasi Muda -->
+      <div class="story-section">
+        <h3>Pesan untuk Generasi Muda</h3>
+        <div class="section-divider"></div>
+        <p>
+          Ibu Siti sangat berharap agar generasi muda Gorontalo tidak melupakan warisan budaya ini. Beliau percaya bahwa karawo memiliki potensi besar untuk berkembang di era modern tanpa kehilangan nilai tradisionalnya.
+        </p>
+        <p>
+          "Anak-anak muda sekarang bisa berkreasi dengan karawo. Tidak harus selalu untuk baju tradisional, bisa untuk tas, sepatu, aksesori modern. Yang penting teknik dan filosofinya tetap dijaga," ujar Ibu Siti dengan penuh semangat.
+        </p>
+        
+        <div class="highlight-box">
+          <p>Karawo adalah identitas kita. Jangan sampai generasi mendatang hanya mengenalnya dari buku sejarah. Praktikkan, lestarikan, dan kembangkan!</p>
+        </div>
+      </div>
+
+      <!-- Kehidupan Sehari-hari -->
+      <div class="story-section">
+        <h3>Kehidupan Sehari-hari</h3>
+        <div class="section-divider"></div>
+        <p>
+          Meski usianya sudah tidak muda lagi, Ibu Siti masih rutin membuat karawo setiap hari. Pagi hari beliau habiskan untuk mengajar murid-muridnya, sementara sore hingga malam digunakan untuk berkarya.
+        </p>
+        <p>
+          Untuk menyelesaikan satu kain karawo berukuran sedang dengan motif kompleks, Ibu Siti membutuhkan waktu sekitar 2-3 minggu. Setiap detail dikerjakan dengan penuh kesabaran dan ketelitian.
+        </p>
+        <p>
+          "Saya tidak pernah merasa lelah ketika menyulam. Justru ini yang membuat saya bahagia dan merasa hidup bermakna. Ketika melihat karya saya dipakai orang dengan bangga, hati saya dipenuhi rasa syukur," tutup Ibu Siti dengan senyuman hangat.
+        </p>
+      </div>
+
+      <button class="btn-back-home" onclick="goBack()">Kembali ke Halaman Utama</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
