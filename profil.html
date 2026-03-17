@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Tim - Karawo Gorontalo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 390px;
+      margin: 0 auto;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 40px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 12px;
+    }
+
+    .back-btn {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #F7F3ED;
+    }
+
+    .back-btn svg {
+      width: 24px;
+      height: 24px;
+      stroke: #333333;
+    }
+
+    .page-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333333;
+      flex: 1;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .hero-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Content */
+    .content {
+      padding: 24px 16px;
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .title-underline {
+      width: 64px;
+      height: 4px;
+      background-color: #C9A227;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    /* Intro Box */
+    .intro-box {
+      background-color: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      color: #333333;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 24px;
+    }
+
+    /* Team Member Cards */
+    .team-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .team-card {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .team-avatar {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #8B5E3C, #C9A227);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .team-info {
+      flex: 1;
+    }
+
+    .team-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #8B5E3C;
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      font-size: 14px;
+      color: #C9A227;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .team-nim {
+      font-size: 13px;
+      color: #666666;
+      margin-bottom: 4px;
+    }
+
+    /* Tools & Materials Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .tool-card {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tool-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .tool-info {
+      padding: 12px;
+    }
+
+    .tool-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 4px;
+    }
+
+    .tool-desc {
+      font-size: 12px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    /* Values Cards */
+    .values-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .value-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .value-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background-color: #FFF9E6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .value-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #C9A227;
+    }
+
+    .value-content h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #8B5E3C;
+      margin-bottom: 4px;
+    }
+
+    .value-content p {
+      font-size: 13px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    /* Instagram Section */
+    .instagram-section {
+      background: linear-gradient(135deg, #8B5E3C 0%, #C9A227 100%);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      color: white;
+      margin-top: 24px;
+    }
+
+    .ig-icon {
+      width: 56px;
+      height: 56px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .ig-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    .ig-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .ig-handle {
+      font-size: 16px;
+      margin-bottom: 16px;
+      opacity: 0.95;
+    }
+
+    .ig-btn {
+      display: inline-block;
+      background-color: white;
+      color: #8B5E3C;
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.3s;
+    }
+
+    .ig-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Pattern Divider */
+    .pattern-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 32px 0;
+    }
+
+    .divider-line {
+      width: 48px;
+      height: 1px;
+      background-color: #C9A227;
+    }
+
+    .divider-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .divider-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #C9A227;
+    }
+
+    /* Button */
+    .btn-back-home {
+      width: 100%;
+      background-color: #8B5E3C;
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 32px;
+    }
+
+    .btn-back-home:hover {
+      background-color: #704B2F;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="page-title">Profil Tim Karawo</h1>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <img src="https://images.unsplash.com/photo-1739298061740-5ed03045b280?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtd29yayUyMGNvbGxhYm9yYXRpb24lMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzczNjk4MDQ4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Tim Karawo">
+      <div class="hero-overlay">
+        <h2 class="hero-title">Tim Karawo</h2>
+        <p class="hero-subtitle">Melestarikan Warisan Budaya Gorontalo</p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Section 1: Tentang Tim -->
+      <section class="section">
+        <h3 class="section-title">Tentang Tim</h3>
+        <div class="title-underline"></div>
+
+        <div class="intro-box">
+          Kami adalah tim mahasiswa yang berdedikasi untuk melestarikan dan mempromosikan warisan budaya Karawo dari Gorontalo. Melalui website ini, kami ingin memperkenalkan keindahan seni sulam tradisional Karawo kepada generasi muda dan masyarakat luas. Dengan semangat kolaborasi dan cinta terhadap budaya lokal, kami berupaya mendokumentasikan sejarah, filosofi, dan proses pembuatan Karawo agar tetap lestari untuk generasi mendatang.
+        </div>
+      </section>
+
+      <!-- Section 2: Profil Team -->
+      <section class="section">
+        <h3 class="section-title">Anggota Tim</h3>
+        <div class="title-underline"></div>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">A</div>
+            <div class="team-info">
+              <h4 class="team-name">Nazwa Dinarjo Miolo</h4>
+              <p class="team-role">Project Leader</p>
+              <p class="team-nim">NIM: 531424075</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">B</div>
+            <div class="team-info">
+              <h4 class="team-name">Muhammad Yusuf Hasiru</h4>
+              <p class="team-role">Content Creator</p>
+              <p class="team-nim">NIM: 531424114</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">C</div>
+            <div class="team-info">
+              <h4 class="team-name">Moh. Radithyo Surya</h4>
+              <p class="team-role">Researcher</p>
+              <p class="team-nim">NIM: 531424113</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">D</div>
+            <div class="team-info">
+              <h4 class="team-name">Ramlan musa</h4>
+              <p class="team-role">Designer</p>
+              <p class="team-nim">NIM: 921424022</p>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+            <div class="team-avatar">D</div>
+            <div class="team-info">
+              <h4 class="team-name">Glenito Exell Rafael Ruata</h4>
+              <p class="team-role">Designer</p>
+              <p class="team-nim">NIM: 921424002</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pattern Divider -->
+      <div class="pattern-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dots">
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- Section 3: Alat & Bahan -->
+      <section class="section">
+        <h3 class="section-title">Alat & Bahan Karawo</h3>
+        <div class="title-underline"></div>
+
+        <div class="tools-grid">
+          <div class="tool-card">
+            <img src="https://images.unsplash.com/photo-1652979849231-d368d9928a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbWJyb2lkZXJ5JTIwdG9vbHMlMjB0aHJlYWQlMjBuZWVkbGV8ZW58MXx8fHwxNzczNzMzOTk1fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Benang & Jarum">
+            <div class="tool-info">
+              <h4 class="tool-name">Benang & Jarum</h4>
+              <p class="tool-desc">Benang berkualitas dan jarum khusus sulam</p>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://images.unsplash.com/photo-1701964619775-b18422290cf9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYWJyaWMlMjB0ZXh0aWxlJTIwbWF0ZXJpYWx8ZW58MXx8fHwxNzczNjc0MjQ3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Kain">
+            <div class="tool-info">
+              <h4 class="tool-name">Kain Berkualitas</h4>
+              <p class="tool-desc">Kain katun atau sutra sebagai media sulam</p>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://images.unsplash.com/photo-1608112169461-48616144c894?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZXdpbmclMjBzY2lzc29ycyUyMGN1dHRpbmclMjB0b29sc3xlbnwxfHx8fDE3NzM3MzM5OTd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Gunting">
+            <div class="tool-info">
+              <h4 class="tool-name">Gunting</h4>
+              <p class="tool-desc">Gunting tajam untuk memotong kain dan benang</p>
+            </div>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://images.unsplash.com/photo-1765218305114-f97ea2a21aa0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbWJyb2lkZXJ5JTIwaG9vcCUyMGZyYW1lfGVufDF8fHx8MTc3MzczMzk5N3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Pembidangan">
+            <div class="tool-info">
+              <h4 class="tool-name">Pembidangan</h4>
+              <p class="tool-desc">Alat untuk merentangkan kain saat menyulam</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pattern Divider -->
+      <div class="pattern-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dots">
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- Section 4: Nilai Produk -->
+      <section class="section">
+        <h3 class="section-title">Nilai Produk Kami</h3>
+        <div class="title-underline"></div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="value-content">
+              <h4>Kualitas Terjamin</h4>
+              <p>Setiap produk dibuat dengan standar kualitas tinggi oleh pengrajin berpengalaman</p>
+            </div>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="value-content">
+              <h4>100% Handmade</h4>
+              <p>Dikerjakan secara manual tanpa mesin untuk mempertahankan keaslian budaya</p>
+            </div>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <div class="value-content">
+              <h4>Melestarikan Budaya</h4>
+              <p>Setiap pembelian membantu menjaga kelestarian warisan budaya Gorontalo</p>
+            </div>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="value-content">
+              <h4>Proses Teliti</h4>
+              <p>Dikerjakan dengan penuh kesabaran dan ketelitian dalam setiap detailnya</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Instagram Section -->
+      <div class="instagram-section">
+        <div class="ig-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+        <h3 class="ig-title">Ikuti Kami di Instagram</h3>
+        <p class="ig-handle">@charm.karawo</p>
+        <a href="https://instagram.com/charm.karawo" target="_blank" class="ig-btn">Kunjungi Instagram</a>
+      </div>
+
+      <button class="btn-back-home" onclick="goBack()">Kembali ke Halaman Utama</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
