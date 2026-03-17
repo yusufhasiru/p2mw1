@@ -449,6 +449,12 @@
     html {
       scroll-behavior: smooth;
     }
+
+    .hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
   </style>
 </head>
 <body>
@@ -456,19 +462,20 @@
     <!-- Header -->
     <header>
       <div class="logo">
-        <img src="harta/logop2mw.png" alt="" height="32" width="28">
+        <a href="profil.html"><img src="harta/logop2mw.png" alt="" height="32" width="28"> </a>
       </div>
       <h1 class="site-title">Karawo Gorontalo</h1>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-      <img src="https://images.unsplash.com/photo-1763368161039-12a2879b55e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGVtYnJvaWRlcnklMjBmYWJyaWMlMjB0ZXh0dXJlfGVufDF8fHx8MTc3MzYzODAzM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Karawo embroidery fabric">
+      <video id="heroVideo" src="harta/video6.mp4" muted preload="auto"></video>
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h2>Karawo</h2>
-        <p class="hero-subtitle">Traditional Embroidery from Gorontalo</p>
-        <p class="hero-description">A cultural heritage crafted carefully by skilled artisans.</p>
+        <h2>Charm QR Karawo</h2>
+        <p class="hero-description">
+        Charm QR Karawo adalah inovasi gantungan kunci yang memanfaatkan potongan kain karawo dan penutup botol plastik menjadi produk bernilai tinggi. Dilengkapi dengan kode QR, produk ini tidak hanya menjadi aksesori, tetapi juga media edukasi untuk mengenal sejarah, filosofi, dan proses pembuatan karawo.
+        </p>
         <button class="btn-primary" onclick="scrollToSection('sejarah')">Baca Sejarah</button>
       </div>
     </section>
@@ -510,7 +517,7 @@
 
         <div class="process-grid">
           <div class="process-card">
-            <img src="https://images.unsplash.com/photo-1771587756631-6cffb69fc434?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkcmF3aW5nJTIwcGF0dGVybiUyMGZhYnJpYyUyMHBlbmNpbHxlbnwxfHx8fDE3NzM2NDg0ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Menggambar Pola">
+            <img src="harta/pola.jpg" alt="Menggambar Pola">
             <div class="process-card-body">
               <span class="process-number">1</span>
               <h4 class="process-title">Menggambar Pola</h4>
@@ -520,7 +527,7 @@
           </div>
 
           <div class="process-card">
-            <img src="https://images.unsplash.com/photo-1678775700423-f535a00306e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXR0aW5nJTIwZmFicmljJTIwZmliZXJzJTIwc2Npc3NvcnN8ZW58MXx8fHwxNzczNjQ4NDg2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mengiris Kain">
+            <img src="harta/mengiris.png" alt="Mengiris Kain">
             <div class="process-card-body">
               <span class="process-number">2</span>
               <h4 class="process-title">Mengiris Kain</h4>
@@ -530,7 +537,7 @@
           </div>
 
           <div class="process-card">
-            <img src="https://images.unsplash.com/photo-1746737198844-b9c9f4189352?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwdWxsaW5nJTIwdGhyZWFkcyUyMGVtYnJvaWRlcnl8ZW58MXx8fHwxNzczNjQ4NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mencabut Benang">
+            <img src="harta/mencabut.png" alt="Mencabut Benang">
             <div class="process-card-body">
               <span class="process-number">3</span>
               <h4 class="process-title">Mencabut Benang</h4>
@@ -540,7 +547,7 @@
           </div>
 
           <div class="process-card">
-            <img src="https://images.unsplash.com/photo-1681061660434-b3110df2b6b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbWJyb2lkZXJ5JTIwc3RpdGNoaW5nJTIwY29sb3JmdWwlMjB0aHJlYWR8ZW58MXx8fHwxNzczNjQ4NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Menyulam">
+            <img src="harta/sulam.png" alt="Menyulam">
             <div class="process-card-body">
               <span class="process-number">4</span>
               <h4 class="process-title">Menyulam</h4>
@@ -569,7 +576,7 @@
 
         <div class="motif-grid">
           <div class="motif-card">
-            <img src="https://images.unsplash.com/photo-1695668148100-987abc5841ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmbG9yYWwlMjBlbWJyb2lkZXJ5JTIwZGVzaWdufGVufDF8fHx8MTc3MzYzODAzNHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Bunga">
+            <img src="harta/bunga.png" alt="Motif Bunga">
             <div class="motif-card-body">
               <h4 class="motif-title">Motif Bunga</h4>
               <div class="motif-underline"></div>
@@ -578,7 +585,7 @@
           </div>
 
           <div class="motif-card">
-            <img src="https://images.unsplash.com/photo-1762111908760-ce1cd8c135e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXR1cmUlMjBwYXR0ZXJuJTIwZmFicmljfGVufDF8fHx8MTc3MzYzODAzNXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Alam">
+            <img src="harta/alam.png" alt="Motif Alam">
             <div class="motif-card-body">
               <h4 class="motif-title">Motif Alam</h4>
               <div class="motif-underline"></div>
@@ -587,7 +594,7 @@
           </div>
 
           <div class="motif-card">
-            <img src="https://images.unsplash.com/photo-1773499129488-bb7e21257452?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnZW9tZXRyaWMlMjBwYXR0ZXJuJTIwZW1icm9pZGVyeXxlbnwxfHx8fDE3NzM2MzgwMzR8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Geometris">
+            <img src="harta/geometri.png" alt="Motif Geometris">
             <div class="motif-card-body">
               <h4 class="motif-title">Motif Geometris</h4>
               <div class="motif-underline"></div>
@@ -596,11 +603,11 @@
           </div>
 
           <div class="motif-card">
-            <img src="https://images.unsplash.com/photo-1761515315730-078ad40a3430?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWFmJTIwcGF0dGVybiUyMHRleHRpbGV8ZW58MXx8fHwxNzczNjM4MDM1fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Motif Daun">
+            <img src="harta/abstrak.png" alt="Motif Abstrak">
             <div class="motif-card-body">
-              <h4 class="motif-title">Motif Daun</h4>
+              <h4 class="motif-title">Motif Abstrak</h4>
               <div class="motif-underline"></div>
-              <p class="motif-description">Dedaunan tropis yang melambangkan kehidupan</p>
+              <p class="motif-description">Motif yang menonjolkan imajinasi, ekspresi, dan kebebasan bentuk.</p>
             </div>
           </div>
         </div>
@@ -815,6 +822,41 @@
         });
       }, 100);
     });
+
+//-------
+    const video = document.getElementById("heroVideo");
+
+video.addEventListener("loadedmetadata", () => {
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+    let scrollFraction = scrollTop / maxScroll;
+
+    // 🔥 PERCEPAT EFEK
+    scrollFraction = scrollFraction * 3;
+
+    if (scrollFraction > 1) scrollFraction = 1;
+
+    video.currentTime = scrollFraction * video.duration;
+  });
+});
+
+//---------
+const pageKey = window.location.pathname;
+
+// Simpan
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("scroll_" + pageKey, window.scrollY);
+});
+
+// Ambil
+window.addEventListener("load", () => {
+  const scrollPosition = localStorage.getItem("scroll_" + pageKey);
+  if (scrollPosition) {
+    window.scrollTo(0, parseInt(scrollPosition));
+  }
+});
   </script>
 </body>
 </html>
