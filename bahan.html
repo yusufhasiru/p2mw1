@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bahan Lainnya - Karawo Gorontalo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 390px;
+      margin: 0 auto;
+      background-color: #F7F3ED;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 40px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 12px;
+    }
+
+    .back-btn {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #F7F3ED;
+    }
+
+    .back-btn svg {
+      width: 24px;
+      height: 24px;
+      stroke: #333333;
+    }
+
+    .page-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333333;
+      flex: 1;
+    }
+
+    /* Hero Image */
+    .hero-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Content */
+    .content {
+      padding: 24px 16px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .title-underline {
+      width: 80px;
+      height: 4px;
+      background-color: #C9A227;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+
+    .intro-text {
+      background-color: white;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      color: #333333;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    /* Material Cards */
+    .material-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .material-item {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .material-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .material-content {
+      padding: 16px;
+    }
+
+    .material-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #8B5E3C;
+      margin-bottom: 4px;
+    }
+
+    .material-divider {
+      width: 40px;
+      height: 3px;
+      background-color: #C9A227;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    .material-description {
+      color: #333333;
+      line-height: 1.7;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .material-usage {
+      background-color: #FFF9E6;
+      border-left: 4px solid #C9A227;
+      padding: 12px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 12px;
+    }
+
+    .material-usage-title {
+      font-weight: 600;
+      color: #8B5E3C;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .material-usage-text {
+      color: #666666;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .btn-back-home {
+      width: 100%;
+      background-color: #8B5E3C;
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 24px;
+    }
+
+    .btn-back-home:hover {
+      background-color: #704B2F;
+    }
+
+    .pattern-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 32px 0;
+    }
+
+    .divider-line {
+      width: 48px;
+      height: 1px;
+      background-color: #C9A227;
+    }
+
+    .divider-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .divider-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #C9A227;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <button class="back-btn" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="page-title">Alat & Bahan Lainnya</h1>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1765518440022-10242cc86895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbGllcnMlMjB0b29sJTIwaGFyZHdhcmV8ZW58MXx8fHwxNzczODUxNjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Bahan Tambahan">
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h2 class="section-title">Alat & Bahan Tambahan</h2>
+      <div class="title-underline"></div>
+
+      <div class="intro-text">
+        Selain bahan utama, terdapat beberapa alat dan bahan pendukung yang diperlukan untuk menyelesaikan pembuatan gantungan kunci karawo kami.
+      </div>
+
+      <!-- Material List -->
+      <div class="material-list">
+        <!-- Paku Ulir -->
+        <div class="material-item">
+          <img src="harta/ulir.png" alt="Paku Ulir">
+          <div class="material-content">
+            <h3 class="material-name">Paku Ulir</h3>
+            <div class="material-divider"></div>
+            <p class="material-description">
+              Paku ulir adalah komponen penting dalam pembuatan gantungan kunci karawo sebagai penghubung antara resin yang sudah mengeras dengan rantai gantungan kunci.
+            </p>
+            <div class="material-usage">
+              <p class="material-usage-title">Fungsi & Kegunaan:</p>
+              <p class="material-usage-text">
+                Menghubungkan resin dengan rantai gantungan kunci, memberikan kekuatan dan daya tahan pada produk.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pattern Divider -->
+        <div class="pattern-divider">
+          <div class="divider-line"></div>
+          <div class="divider-dots">
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+          </div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Tang -->
+        <div class="material-item">
+          <img src="harta/tang.png" alt="Tang">
+          <div class="material-content">
+            <h3 class="material-name">Tang</h3>
+            <div class="material-divider"></div>
+            <p class="material-description">
+              Tang adalah alat bantu yang digunakan untuk memasang paku ulir dan rantai gantungan kunci dengan presisi dan kuat.
+            </p>
+            <div class="material-usage">
+              <p class="material-usage-title">Fungsi & Kegunaan:</p>
+              <p class="material-usage-text">
+                Membantu memasang komponen kecil, mengencangkan paku ulir, dan merangkai rantai gantungan kunci.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pattern Divider -->
+        <div class="pattern-divider">
+          <div class="divider-line"></div>
+          <div class="divider-dots">
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+          </div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Alat Pemotong Botol -->
+        <div class="material-item">
+          <img src="harta/pemotong.png" alt="Alat Pemotong Botol">
+          <div class="material-content">
+            <h3 class="material-name">Alat Pemotong Penutup Botol</h3>
+            <div class="material-divider"></div>
+            <p class="material-description">
+              Alat khusus untuk memotong dan membentuk penutup botol plastik menjadi tempat untuk kain karawo dan qrcode.
+            </p>
+            <div class="material-usage">
+              <p class="material-usage-title">Fungsi & Kegunaan:</p>
+              <p class="material-usage-text">
+                Memotong penutup botol dengan ukuran yang tepat, membentuk tempat untuk kain karawo dan qrcode.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pattern Divider -->
+        <div class="pattern-divider">
+          <div class="divider-line"></div>
+          <div class="divider-dots">
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+          </div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Cetakan Resin -->
+        <div class="material-item">
+          <img src="harta/cetakan.png" alt="Cetakan Resin">
+          <div class="material-content">
+            <h3 class="material-name">Cetakan Resin</h3>
+            <div class="material-divider"></div>
+            <p class="material-description">
+              Cetakan silikon yang digunakan untuk membentuk resin menjadi gantungan kunci dengan bentuk yang sempurna dan halus.
+            </p>
+            <div class="material-usage">
+              <p class="material-usage-title">Fungsi & Kegunaan:</p>
+              <p class="material-usage-text">
+                Membentuk resin menjadi gantungan kunci, memudahkan proses pelepasan setelah resin mengeras.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pattern Divider -->
+      <div class="pattern-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dots">
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+      <button class="btn-back-home" onclick="goBack()">Kembali ke Profil Tim</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = 'profil.html';
+    }
+  </script>
+</body>
+</html>
