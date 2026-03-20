@@ -455,6 +455,24 @@
     height: 100%;
     object-fit: cover;
 }
+
+.logo a {
+  display: inline-block;
+  padding: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.3); /* garis hitam transparan */
+  border-radius: 8px; /* sudut melengkung */
+  transition: all 0.2s ease;
+}
+
+.logo a:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* efek hover */
+  border-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.logo img {
+  display: block;
+}
   </style>
 </head>
 <body>
@@ -480,8 +498,72 @@
       </div>
     </section>
 
+    
+
     <!-- Content Sections -->
     <div class="content">
+
+      <section>
+        <h3 class="section-title">Alat & Bahan Utama</h3>
+        <div class="title-underline"></div>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <img src="harta/sisa.png" alt="Sisa Karawo">
+            <div class="process-card-body">
+            
+              <h4 class="process-title">Sisa Karawo</h4>
+              <div class="process-underline"></div>
+              <p class="process-description">Potongan kain karawo yang masih memiliki motif indah</p>
+            </div>
+          </div>
+
+          <div class="process-card">
+            <img src="harta/resin.png" alt="Resin">
+            <div class="process-card-body">
+              
+              <h4 class="process-title">Resin</h4>
+              <div class="process-underline"></div>
+              <p class="process-description">Resin bening untuk melapisi dan melindungi motif</p>
+            </div>
+          </div>
+
+          <div class="process-card">
+            <img src="harta/penutup.png" alt="Penutup Botol Plastik">
+            <div class="process-card-body">
+              
+              <h4 class="process-title">Penutup Botol Plastik</h4>
+              <div class="process-underline"></div>
+              <p class="process-description">Tutup botol sebagai tempat untuk kain karawo dan qrcode</p>
+            </div>
+          </div>
+
+          <div class="process-card">
+            <img src="harta/rantai.png" alt="Rantai Gantungan Kunci">
+            <div class="process-card-body">
+              
+              <h4 class="process-title">Rantai Gantungan Kunci</h4>
+              <div class="process-underline"></div>
+              <p class="process-description">Rantai metal untuk menggantung kunci</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="bahan.html" class="btn-secondary" style="display: block; text-align: center; text-decoration: none; margin-top: 24px;">Alat & Bahan Lainnya</a>
+      </section>
+
+      <!-- Pattern Divider -->
+      <div class="pattern-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dots">
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+          <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+
       <!-- Section 1: Sejarah Karawo -->
       <section id="sejarah">
         <h3 class="section-title">Sejarah Karawo</h3>
