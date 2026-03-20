@@ -497,59 +497,7 @@
         <div class="divider-line"></div>
       </div>
 
-      <!-- Section 3: Alat & Bahan -->
-      <section class="section">
-        <div class="content">
-        <h3 class="section-title">Alat & Bahan Utama</h3>
-        <div class="title-underline"></div>
-
-       <div class="tools-grid">
-          <div class="tool-card">
-            <img src="harta/sisa.png" alt="Sisa Karawo">
-            <div class="tool-info">
-              <h4 class="tool-name">Sisa Karawo</h4>
-              <p class="tool-desc">Potongan kain karawo yang masih memiliki motif indah</p>
-            </div>
-          </div>
-
-          <div class="tool-card">
-            <img src="harta/resin.png" alt="Resin">
-            <div class="tool-info">
-              <h4 class="tool-name">Resin</h4>
-              <p class="tool-desc">Resin bening untuk melapisi dan melindungi motif</p>
-            </div>
-          </div>
-
-          <div class="tool-card">
-            <img src="harta/penutup.png" alt="Penutup Botol">
-            <div class="tool-info">
-              <h4 class="tool-name">Penutup Botol Plastik</h4>
-              <p class="tool-desc">Tutup botol sebagai tempat untuk kain karawo dan qrcode</p>
-            </div>
-          </div>
-
-          <div class="tool-card">
-            <img src="harta/rantai.png" alt="Rantai Gantungan">
-            <div class="tool-info">
-              <h4 class="tool-name">Rantai Gantungan Kunci</h4>
-              <p class="tool-desc">Rantai metal untuk menggantung kunci</p>
-            </div>
-          </div>
-        </div>
-        <a href="bahan.html" class="btn-secondary" style="display: block; text-align: center; text-decoration: none; margin-top: 24px;">Alat & Bahan Lainnya</a>
-      </section>
-
-      <!-- Pattern Divider -->
-      <div class="pattern-divider">
-        <div class="divider-line"></div>
-        <div class="divider-dots">
-          <div class="divider-dot"></div>
-          <div class="divider-dot"></div>
-          <div class="divider-dot"></div>
-        </div>
-        <div class="divider-line"></div>
-      </div>
-
+    
 
       <!-- Section 4: Nilai Produk -->
       <section class="section">
@@ -643,26 +591,7 @@
       window.location.href = 'index.html';
     }
 
-    //---------
-const pageKey = window.location.pathname;
-
-// Simpan
-window.addEventListener("beforeunload", () => {
-  localStorage.setItem("scroll_" + pageKey, window.scrollY);
-});
-
-// Ambil
-window.addEventListener("load", () => {
-  const scrollPosition = localStorage.getItem("scroll_" + pageKey);
-  if (scrollPosition) {
-    setTimeout(() => {
-      window.scrollTo({
-        top: parseInt(scrollPosition),
-        behavior: "smooth"
-      });
-    }, 100);
-  }
-});
+   
   </script>
 </body>
 </html>
