@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karawo Gorontalo - Traditional Embroidery</title>
   <style>
-    * {
+     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -27,7 +27,6 @@
       padding-bottom: 80px;
     }
 
-    /* Header */
     header {
       display: flex;
       align-items: center;
@@ -42,6 +41,42 @@
 
     .logo {
       flex-shrink: 0;
+      position: relative;
+    }
+
+    /* TOOLTIP */
+    .logo::after {
+      content: "About Us";
+      position: absolute;
+      top: 42px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #8B5E3C;
+      color: white;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .logo::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent transparent #8B5E3C transparent;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .logo.hide-tooltip::after,
+    .logo.hide-tooltip::before {
+      opacity: 0;
     }
 
     .logo img {
@@ -479,7 +514,7 @@
   <div class="container">
     <!-- Header -->
     <header>
-      <div class="logo">
+      <div class="logo" id="logo">
         <a href="profil.html"><img src="harta/logop2mw.png" alt="" height="32" width="28"> </a>
       </div>
       <h1 class="site-title">Karawo Gorontalo</h1>
@@ -939,6 +974,25 @@ window.addEventListener("load", () => {
     window.scrollTo(0, parseInt(scrollPosition));
   }
 });
+
+const logo = document.getElementById("logo");
+
+    function loopTooltip() {
+      // tampil
+      logo.classList.remove("hide-tooltip");
+
+      // hilang setelah 3 detik
+      setTimeout(() => {
+        logo.classList.add("hide-tooltip");
+      }, 3000);
+
+      // muncul lagi setelah jeda 3 detik
+      setTimeout(() => {
+        loopTooltip();
+      }, 10000);
+    }
+
+    window.addEventListener("load", loopTooltip);
   </script>
 </body>
 </html>
